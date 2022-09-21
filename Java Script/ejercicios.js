@@ -26,6 +26,51 @@ function diagonal(matriz) {
 console.log(diagonal([[1, 0, 0], [0, 2, 3], [0, 0, 3] ]));
 console.log(diagonal([[3, 0, 0], [0, 1, 0], [0, 0, 2] ]));
 
+// EJERCICIO 9
+const Alumnos = () => {
+  const alumnos = [
+    { firstname: "demo",
+      lastname: "demo", 
+      dni: 1234 },
+    { firstname: "demo2",
+      lastname: "demo2", 
+      dni: 1235 },
+    { firstname: "demo3",
+      lastname: "demo3", 
+      dni: 1236 },
+]
+
+  return (
+    <div class="div-alumnos pt-5 container-fluid">
+      <h4 class="text-center pt-5">DEMO</h4>
+      <div class="row justify-content-end d-flex justify-content-evenly container-fluid">
+      <hr></hr>
+            <p class="col-2 justify-content-center d-flex categorias border-start fw-bold">#</p>
+            <p class="col-2 justify-content-center d-flex categorias border-start fw-bold">NOMBRE</p>
+            <p class="col-2 justify-content-center d-flex categorias  border-start fw-bold">EDAD</p>
+            <p class="col-3 justify-content-center d-flex categorias  border-start fw-bold">CARRERA</p>
+        <hr ></hr>
+      </div>
+      {
+        alumnos.length > 0 ?
+          alumnos.map((alumno,i) =>(
+            <div key={alumno.nombre} class="row  d-flex justify-content-evenly container-fluid">
+              <p class="col-2 justify-content-center d-flex border-start fw-bold">{i+1}</p>
+              <p class="col-2 justify-content-center d-flex border-start">{alumno.firstname}</p>
+              <p class="col-2 justify-content-center d-flex border-start">{alumno.lastname}</p>
+              <p class="col-3 justify-content-center d-flex border-start">{alumno.dni}</p>
+              <hr></hr>
+            </div>
+          ))
+        : <p>No hay demo</p>
+      }
+    </div>
+  )
+}
+export default Alumnos
+
+
+
 // EJERCICIO 13
 const App = () => {
     return (
